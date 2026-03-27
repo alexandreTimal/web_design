@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Course homepage - Web Design Course</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     .skip-link {
       display: none;
@@ -40,7 +41,7 @@
 
     <section>
       <h2>Personal Skills</h2>
-      <table border="1">
+      <table class="skills-table">
         <thead>
           <tr>
             <th scope="col" colspan="3">Personal Skills</th>
@@ -49,16 +50,16 @@
         <tbody>
           <tr>
             <th scope="row" rowspan="3">Programming</th>
-            <td>Python</td>
+            <td class="highlight-green">Python</td>
             <td>JavaScript</td>
           </tr>
           <tr>
             <td>C/C++</td>
-            <td>Rust</td>
+            <td class="highlight-green">Rust</td>
           </tr>
           <tr>
             <td>Java</td>
-            <td>-</td>
+            <td class="highlight-red" style="font-style: italic;">-</td>
           </tr>
           <tr>
             <th scope="row" rowspan="4">Design</th>
@@ -83,7 +84,7 @@
 
     <section>
       <h2>Portfolio</h2>
-      <table border="1">
+      <table class="portfolio-table">
         <caption>Personal Projects Portfolio</caption>
         <thead>
           <tr>
