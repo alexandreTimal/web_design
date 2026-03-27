@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>Course homepage - Heading hierarchy example</title>
+  <title>Course homepage - Web Design Course</title>
+  <style>
+    .skip-link {
+      display: none;
+    }
+    .skip-link:focus {
+      display: block;
+    }
+  </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <header>
     <h1>My course homepage</h1>
     <p>Optional tagline here.</p>
   </header>
+
   <nav aria-label="Main navigation">
     <ul>
-      <li><a href="#">Course site</a></li>
-      <li><a href="#">Resources</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
+
   <main id="main-content">
     <section>
       <h2>About me / Course goals</h2>
@@ -26,6 +38,7 @@
       <img src="images/banner.jpeg" alt="Pilote on motorcycle">
     </section>
   </main>
+
   <footer>
     <p>Alexandre Timal · Web Design · Spring 2026</p>
   </footer>
