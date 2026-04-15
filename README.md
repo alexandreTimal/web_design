@@ -1,2 +1,17 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/iAy5P14p)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=23277426)
+# HW1 - Personal Brand Portfolio + CV
+
+## Chosen scenario
+
+Personal Brand Portfolio + CV - a small multi-page site presenting my background, projects and contact form.
+
+## Pages
+
+- `index.html` - home page with intro, featured projects and latest updates.
+- `about.html` - content page with profile, experience, education and skills.
+- `data.html` - data page with a real project portfolio table (5 rows, headers with scope, caption).
+- `contact.html` - contact form page (name, email, subject, message, radio group, submit).
+- `styles.css` - single external stylesheet used by all pages.
+
+## Known limitations
+
+- The contact form does not actually send data, it is only a static HTML.

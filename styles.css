@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: black;
+  background: snow;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: purple;
+  color: white;
+  padding: 8px 12px;
+}
+.skip-link:focus {
+  left: 10px;
+}
+
+header {
+  border-bottom: 2px solid purple;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+h1 {
+  color: purple;
+  margin: 0 0 5px 0;
+}
+
+h2 {
+  color: darkmagenta;
+  margin-top: 25px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  background: purple;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+main section {
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px gainsboro;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.data-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.data-table caption {
+  caption-side: top;
+  font-weight: bold;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid lightgray;
+  padding: 10px;
+  text-align: left;
+}
+
+.data-table thead th {
+  background: purple;
+  color: white;
+}
+
+.data-table tbody th {
+  background: thistle;
+}
+
+.data-table tbody tr:nth-child(even) td {
+  background: lavenderblush;
+}
+
+form fieldset {
+  border: 1px solid lightgray;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+form legend {
+  font-weight: bold;
+  color: purple;
+  padding: 0 5px;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+form input[type="radio"] {
+  margin-right: 5px;
+}
+
+form input[type="radio"] + label {
+  display: inline;
+  margin-right: 15px;
+}
+
+form button {
+  background: purple;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+form button:hover,
+form button:focus {
+  background: darkmagenta;
+}
+
+footer {
+  border-top: 2px solid purple;
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: center;
+  color: dimgray;
+}

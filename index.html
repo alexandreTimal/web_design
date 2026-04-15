@@ -2,130 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Course homepage - Web Design Course</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .skip-link {
-      display: none;
-    }
-    .skip-link:focus {
-      display: block;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Alexandre Timal Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
-    <h1>My course homepage</h1>
-    <p>Optional tagline here.</p>
+    <h1>Alexandre Timal</h1>
+    <p>Personal Brand Portfolio + CV</p>
   </header>
 
   <nav aria-label="Main navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="data.html">Projects Data</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="cv.html">CV</a></li>
     </ul>
   </nav>
 
   <main id="main-content">
     <section>
-      <h2>About me / Course goals</h2>
-      <p>My name is Alexandre Timal, I am studying Computer Science, and one goal for this course is to improve my web development skills.</p>
-    </section>
-    <section>
-      <h2>Photo</h2>
-      <img src="images/banner.jpeg" alt="Pilote on motorcycle">
+      <h2>Intro</h2>
+      <p>My name is Alexandre Timal, I am a 4th year Computer Science student at Epitech. I am passionate about web development, motorcycles, and building digital products from scratch.</p>
+      <img src="images/banner.jpeg" alt="Pilot on motorcycle">
     </section>
 
     <section>
-      <h2>Personal Skills</h2>
-      <table class="skills-table">
-        <thead>
-          <tr>
-            <th scope="col" colspan="3">Personal Skills</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row" rowspan="3">Programming</th>
-            <td class="highlight-green">Python</td>
-            <td>JavaScript</td>
-          </tr>
-          <tr>
-            <td>C/C++</td>
-            <td class="highlight-green">Rust</td>
-          </tr>
-          <tr>
-            <td>Java</td>
-            <td class="highlight-red" style="font-style: italic;">-</td>
-          </tr>
-          <tr>
-            <th scope="row" rowspan="4">Design</th>
-            <td colspan="2">Figma</td>
-          </tr>
-          <tr>
-            <td colspan="2">Illustrator</td>
-          </tr>
-          <tr>
-            <td colspan="2">Photoshop</td>
-          </tr>
-          <tr>
-            <td colspan="2">UI/UX</td>
-          </tr>
-          <tr>
-            <th scope="row">Other</th>
-            <td colspan="2">Git</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>Featured Projects</h2>
+      <ul>
+        <li><strong>Trackmate</strong> - Motorcycle track day booking marketplace (React, Next.js, Supabase).</li>
+        <li><strong>Epitech projects</strong> - 4 years of team projects in C, C++ and Python.</li>
+        <li><strong>Freelance websites</strong> - Small business sites with modern web technologies.</li>
+      </ul>
     </section>
 
     <section>
-      <h2>Portfolio</h2>
-      <table class="portfolio-table">
-        <caption>Personal Projects Portfolio</caption>
-        <thead>
-          <tr>
-            <th scope="col">Project Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Technologies</th>
-            <th scope="col">Difficulty</th>
-            <th scope="col">Link</th>
-            <th scope="col">ETC</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Trackmate</td>
-            <td>Motorcycle track day booking marketplace bringing together organizers across the French and European market, 1st year of activity</td>
-            <td>
-              <ul>
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Vercel</li>
-                <li>Supabase</li>
-              </ul>
-            </td>
-            <td>
-              <select>
-                <option>Low</option>
-                <option selected>Medium</option>
-                <option>High</option>
-              </select>
-            </td>
-            <td><a href="https://www.trackmate.fr">www.trackmate.fr</a></td>
-            <td>8 months</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>Latest Updates</h2>
+      <p>Currently working on new features for Trackmate and studying Web Design at UVT during my exchange semester.</p>
     </section>
   </main>
 
   <footer>
-    <p>Alexandre Timal · Web Design · Spring 2026</p>
+    <p>Alexandre Timal &middot; Web Design &middot; 2026</p>
   </footer>
 </body>
 </html>

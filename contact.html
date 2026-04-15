@@ -2,36 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Contact - Web Design Course</title>
-  <style>
-    .skip-link {
-      display: none;
-    }
-    .skip-link:focus {
-      display: block;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - Alexandre Timal</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
     <h1>Contact</h1>
-    <p>Get in touch with us using the form below.</p>
+    <p>Get in touch with me using the form below.</p>
   </header>
 
   <nav aria-label="Main navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="data.html">Projects Data</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <main id="main-content">
     <section>
+      <h2>Contact form</h2>
       <form method="post" action="#" aria-label="Contact form">
-
         <fieldset>
           <legend>Your details</legend>
 
@@ -40,26 +35,20 @@
 
           <label for="email">Email (required)</label>
           <input type="email" id="email" name="email" required>
-
-          <label for="phone">Phone (optional, format: digits and spaces)</label>
-          <input type="tel" id="phone" name="phone"
-                 pattern="[0-9\s\-+]+" title="Digits, spaces, hyphens, or plus only">
         </fieldset>
 
         <fieldset>
           <legend>Your message</legend>
 
           <label for="subject">Subject (required)</label>
-          <input type="text" id="subject" name="subject" required
-                 aria-describedby="subject-hint">
-          <p id="subject-hint" class="form-hint">e.g. Lab 2 question, schedule, grading</p>
+          <input type="text" id="subject" name="subject" required>
 
-          <label for="msg">Message (required)</label>
-          <textarea id="msg" name="message" rows="5" required></textarea>
+          <label for="message">Message (required)</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
         </fieldset>
 
         <fieldset>
-          <legend>How did you hear about us?</legend>
+          <legend>How did you hear about me?</legend>
 
           <input type="radio" id="hear-course" name="hear" value="course">
           <label for="hear-course">Course / university</label>
@@ -68,74 +57,16 @@
           <label for="hear-search">Search / web</label>
 
           <input type="radio" id="hear-friend" name="hear" value="friend">
-          <label for="hear-friend">Friend / colleague</label>
-
-          <input type="radio" id="hear-other" name="hear" value="other">
-          <label for="hear-other">Other</label>
+          <label for="hear-friend">Friend</label>
         </fieldset>
 
         <button type="submit">Send message</button>
       </form>
     </section>
-
-    <section>
-      <h2>Messages Received</h2>
-      <table border="1">
-        <caption>Messages Received</caption>
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Message</th>
-            <th scope="col">Date</th>
-            <th scope="col">Priority</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td rowspan="2">John Doe</td>
-            <td rowspan="2"><a href="mailto:john@example.com">john@example.com</a></td>
-            <td>Question about Lab 1 deadline</td>
-            <td>2026-03-10</td>
-            <td>High</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Thanks for the quick reply!</td>
-            <td>2026-03-11</td>
-            <td>Low</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Jane Smith</td>
-            <td><a href="mailto:jane@example.com">jane@example.com</a></td>
-            <td>Issue with GitHub Pages deployment</td>
-            <td>2026-03-12</td>
-            <td>Medium</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td rowspan="2">Bob Martin</td>
-            <td rowspan="2"><a href="mailto:bob@example.com">bob@example.com</a></td>
-            <td>Request for extra resources</td>
-            <td>2026-03-15</td>
-            <td>Medium</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Follow-up on resources</td>
-            <td>2026-03-18</td>
-            <td>Low</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
   </main>
 
   <footer>
-    <p>Alexandre Timal · Web Design · Spring 2026</p>
+    <p>Alexandre Timal &middot; Web Design &middot; 2026</p>
   </footer>
 </body>
 </html>
