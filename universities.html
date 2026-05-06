@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chatbot - Alexandre Timal</title>
+  <title>Universities - Alexandre Timal</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
-    <h1>Chatbot</h1>
-    <p>Simple interactive chatbot demo.</p>
+    <h1>Universities</h1>
+    <p>Public list of universities in Romania (fetched from Hipolabs API).</p>
   </header>
 
   <nav aria-label="Main navigation">
@@ -28,12 +27,25 @@
 
   <main id="main-content">
     <section>
-      <h2>Chat</h2>
-      <div class="chat-container" id="chat-container"></div>
-      <form id="chat-form">
-        <input type="text" id="user-input" placeholder="Answer Here...">
-        <button type="submit">Trimite</button>
-      </form>
+      <h2>Universities in Romania</h2>
+
+      <label for="q">Filter (optional):</label>
+      <input type="text" id="q" placeholder="search by name…">
+
+      <button id="exportCsv">Export CSV</button>
+
+      <p id="status"></p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
     </section>
   </main>
 
@@ -41,6 +53,6 @@
     <p>Alexandre Timal &middot; Web Design &middot; 2026</p>
   </footer>
 
-  <script src="chatbot.js"></script>
+  <script src="universities.js"></script>
 </body>
 </html>
