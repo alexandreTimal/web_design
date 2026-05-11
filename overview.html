@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overview - Alexandre Timal</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .overview-grid section {
+      margin: 0;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills-list li {
+      background: thistle;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .project-card {
+      border: 1px solid lightgray;
+      border-radius: 4px;
+      padding: 15px;
+      background: white;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: purple;
+    }
+
+    .project-card.featured {
+      background: lavenderblush;
+      border-color: purple;
+      border-width: 2px;
+    }
+
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media (min-width: 700px) {
+      .overview-grid {
+        grid-template-columns: 1fr 2fr;
+      }
+
+      .overview-grid .full {
+        grid-column: 1 / -1;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1000px) {
+      .cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Overview</h1>
+    <p>Quick portfolio overview.</p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="data.html">Projects Data</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="universities.html">Universities</a></li>
+      <li><a href="card.html">Card</a></li>
+      <li><a href="overview.html">Overview</a></li>
+      <li><a href="chatbot.html">Chatbot</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <div class="overview-grid">
+      <section>
+        <h2>Profile</h2>
+        <p>Alexandre Timal, 4th year Computer Science student at Epitech, currently on exchange at UVT.</p>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>C / C++</li>
+          <li>Python</li>
+        </ul>
+      </section>
+
+      <section class="full">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="project-card featured">
+            <h3>Trackmate</h3>
+            <p>Motorcycle track day booking marketplace.</p>
+          </article>
+          <article class="project-card">
+            <h3>Epitech projects</h3>
+            <p>4 years of team projects in C, C++ and Python.</p>
+          </article>
+          <article class="project-card">
+            <h3>Freelance sites</h3>
+            <p>Small business websites.</p>
+          </article>
+          <article class="project-card">
+            <h3>Web Design Labs</h3>
+            <p>UVT exchange semester labs and homework.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="full">
+        <h2>Contact</h2>
+        <div class="contact-flex">
+          <p>Email: <a href="mailto:alexandre.timal@gmail.com">alexandre.timal@gmail.com</a></p>
+          <p>GitHub: <a href="https://github.com/alexandreTimal">github.com/alexandreTimal</a></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Alexandre Timal &middot; Web Design &middot; 2026</p>
+  </footer>
+</body>
+</html>

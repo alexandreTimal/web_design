@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chatbot - Alexandre Timal</title>
+  <title>Business Card - Alexandre Timal</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="chatbot.css">
+  <link rel="stylesheet" href="card.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
-    <h1>Chatbot</h1>
-    <p>Simple interactive chatbot demo.</p>
+    <h1>Business Card</h1>
+    <p>My personal business card.</p>
   </header>
 
   <nav aria-label="Main navigation">
@@ -30,19 +30,22 @@
 
   <main id="main-content">
     <section>
-      <h2>Chat</h2>
-      <div class="chat-container" id="chat-container"></div>
-      <form id="chat-form">
-        <input type="text" id="user-input" placeholder="Answer Here...">
-        <button type="submit">Trimite</button>
-      </form>
+      <div id="business-card" class="card">
+        <img class="card-photo" src="images/banner.jpeg" alt="Profile photo">
+        <h2 class="card-name">Alexandre Timal</h2>
+        <p class="card-role">Computer Science Student - 4th Year</p>
+        <p class="card-link">
+          Email: <a href="mailto:alexandre.timal@gmail.com">alexandre.timal@gmail.com</a>
+        </p>
+        <p class="card-link">
+          GitHub: <a href="https://github.com/alexandreTimal" target="_blank">github.com/alexandreTimal</a>
+        </p>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>Alexandre Timal &middot; Web Design &middot; 2026</p>
   </footer>
-
-  <script src="chatbot.js"></script>
 </body>
 </html>

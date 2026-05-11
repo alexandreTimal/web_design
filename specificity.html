@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Specificity Exercise</title>
+  <style>
+    p { color: blue; }
+    .text { color: green; }
+    #special { color: red; }
+    div p { color: orange; }
+    div.box p.text { color: purple; }
+    p[data-info] { color: brown; }
+  </style>
+</head>
+<body>
+  <h1>Specificity Exercise</h1>
+
+  <p>Paragraph 1 (only element selector).</p>
+
+  <p class="text">Paragraph 2 (class .text).</p>
+
+  <p id="special">Paragraph 3 (id #special).</p>
+
+  <div>
+    <p>Paragraph 4 (inside div).</p>
+  </div>
+
+  <div class="box">
+    <p class="text">Paragraph 5 (div.box p.text).</p>
+  </div>
+
+  <p data-info="yes">Paragraph 6 (attribute selector).</p>
+
+  <p style="color: black;">Paragraph 7 (inline style).</p>
+</body>
+</html>

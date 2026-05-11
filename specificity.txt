@@ -1,0 +1,46 @@
+Specificity Exercise - Answers
+================================
+
+CSS specificity is calculated as (inline, id, class/attribute/pseudo-class, element).
+The higher value wins. Inline styles beat everything except !important.
+
+Paragraph 1: <p>
+  - p { color: blue; }  -> (0,0,0,1)
+  Result: BLUE
+
+Paragraph 2: <p class="text">
+  - p { color: blue; }       -> (0,0,0,1)
+  - .text { color: green; }  -> (0,0,1,0)
+  Winner: .text -> GREEN
+
+Paragraph 3: <p id="special">
+  - p { color: blue; }          -> (0,0,0,1)
+  - #special { color: red; }    -> (0,1,0,0)
+  Winner: #special -> RED
+
+Paragraph 4: <div><p>
+  - p { color: blue; }        -> (0,0,0,1)
+  - div p { color: orange; }  -> (0,0,0,2)
+  Winner: div p -> ORANGE
+
+Paragraph 5: <div class="box"><p class="text">
+  - p { color: blue; }                           -> (0,0,0,1)
+  - .text { color: green; }                      -> (0,0,1,0)
+  - div p { color: orange; }                     -> (0,0,0,2)
+  - div.box p.text { color: purple; }            -> (0,0,2,2)
+  Winner: div.box p.text -> PURPLE
+
+Paragraph 6: <p data-info="yes">
+  - p { color: blue; }                  -> (0,0,0,1)
+  - p[data-info] { color: brown; }      -> (0,0,1,1)
+  Winner: p[data-info] -> BROWN
+
+Paragraph 7: <p style="color: black;">
+  - inline style                        -> (1,0,0,0)
+  Winner: inline -> BLACK
+
+
+Conclusion:
+- Inline > ID > class/attribute > element
+- More specific selectors override less specific ones
+- When equal specificity, the rule defined later wins

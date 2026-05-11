@@ -1,11 +1,24 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.5;
-  color: black;
+  line-height: 1.6;
+  color: #222;
   background: snow;
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  font-size: 16px;
+}
+
+main section:nth-child(odd) {
+  background: white;
+}
+
+main section:nth-child(even) {
+  background: #fdf7ff;
+}
+
+nav ul li:nth-child(1) a {
+  text-decoration: underline;
 }
 
 .skip-link {

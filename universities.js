@@ -1,4 +1,4 @@
-const API_URL = "http://universities.hipolabs.com/search?country=Romania";
+const API_URL = "https://api.codetabs.com/v1/proxy/?quest=http://universities.hipolabs.com/search?country=Romania";
 const status = document.getElementById("status");
 const tbody = document.getElementById("tbody");
 const qInput = document.getElementById("q");
