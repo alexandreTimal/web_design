@@ -1,0 +1,150 @@
+Lab 11
+Tools: Chrome DevTools Lighthouse (Accessibility category) + manual DOM
+inspection + screen reader navigation (Narrator-style reading order check).
+
+1. LIGHTHOUSE FINDINGS
+
+Overall: most pages score high because the basics are in place across the
+whole site:
+- <html lang="en"> on every page
+- a visible-on-focus skip link ("Skip to main content")
+- one <h1> per page and an ordered heading structure (h1 > h2)
+- <nav aria-label="Main navigation">
+- both <img> have alt text (index.html "Pilot on motorcycle",
+  card.html "Profile photo")
+- contact form uses <label for>, <fieldset>, <legend>
+
+Audits that FAILED or WARNED:
+
+[FAIL] label - Form elements do not have associated labels
+  Page: chatbot.html
+  Element: <input type="text" id="user-input" placeholder="Answer Here...">
+  Problem: the only text comes from a placeholder. Placeholders are not
+  accessible names and disappear on typing. Lighthouse flags this input as
+  having no label.
+  Fix: add <label for="user-input">Your answer</label> (can be visually
+  hidden) or aria-label="Your answer".
+
+[FAIL] label - Form elements do not have associated labels
+  Page: universities.html
+  Element: the search input has a <label for="q"> (OK), but the page also
+  relies on placeholder text "search by name…" as the main hint.
+  Note: the filter input is actually labelled correctly; the warning here is
+  the placeholder-only pattern repeated from chatbot.html. Keep <label> as the
+  source of truth.
+
+[WARN] color-contrast - low / borderline contrast
+  Page: all pages (footer + accent text)
+  Elements:
+    - footer text color: dimgray (#696969) on snow background (~5.7:1) - PASS
+      for normal text but close to the limit, worth keeping an eye on.
+    - "Latest Updates" paragraph: darkmagenta (#8B008B) italic on the even
+      section background (#fdf7ff). Ratio is acceptable (~7:1) but italic +
+      small text reduces readability.
+  Fix: darken accent text to ensure >= 4.5:1 with margin and avoid italic for
+  body copy.
+
+[WARN] table headers / scope
+  Page: universities.html
+  Element: <thead><tr><th>Name</th><th>Country</th><th>Website</th></tr>
+  Problem: header cells have no scope="col". Lighthouse / WCAG recommend
+  scope on <th> so assistive tech maps headers to data cells. (data.html
+  already does this correctly - inconsistent between pages.)
+  Fix: <th scope="col">Name</th> etc.
+
+[WARN] aria / live regions (manual-only, Lighthouse cannot fully detect)
+  Pages: chatbot.html, universities.html
+  Elements:
+    - <div class="chat-container" id="chat-container"> filled dynamically by
+      chatbot.js
+    - <p id="status"> updated by universities.js
+  Problem: content is injected with JavaScript but the containers are not
+  live regions, so new bot replies / "loading" / "error" messages are never
+  announced to screen reader users.
+  Fix: add aria-live="polite" (and role="status" on the status paragraph).
+
+[INFO] valid-lang / language consistency
+  Page: chatbot.html
+  Element: <button type="submit">Trimite</button>
+  Problem: page is lang="en" but the submit button text is Romanian
+  ("Trimite"). Screen reader announces it with an English voice. Not a hard
+  Lighthouse fail but a real consistency/usability issue.
+  Fix: change to "Send" or wrap with lang="ro".
+
+
+2. SUGGESTED IMPROVEMENTS
+
+Images:
+- OK on this site (both images have meaningful alt). If the profile photo on
+  card.html is purely decorative, use alt="" instead of "Profile photo".
+
+Labels:
+- Add a real <label> or aria-label to the chatbot input (#user-input).
+- Stop relying on placeholders as labels; keep placeholders only as extra
+  hints.
+
+Focus order:
+- Logical and correct on every page (skip link first, then nav, then main).
+- The skip link is moved off-screen (left:-999px) and returns on :focus -
+  good. Verify it stays the very first tab stop.
+
+Link text:
+- Nav links are descriptive ("Home", "About"...). For the universities table,
+  make sure JS-generated website links use the university name as link text,
+  not a bare "link" / URL, so "Visit website" is not repeated out of context.
+
+Roles:
+- The chat container should expose role="log" or aria-live so message updates
+  are perceivable.
+- The status paragraph should be role="status".
+
+Consistency:
+- contact.html navigation is MISSING the "Chatbot" link that every other page
+  has. Inconsistent navigation confuses screen reader and keyboard users.
+  Fix: add the Chatbot <li> to contact.html nav.
+
+3. NARRATOR / SCREEN READER experience
+
+Page structure:
+- On load the skip link is announced first ("Skip to main content, link") and
+  activating it jumps focus into <main> - this works well.
+- Headings are announced with correct level (h1 then h2), so jumping by
+  headings gives a clear outline of each page.
+- The navigation is announced as "Main navigation, navigation" thanks to the
+  aria-label, then each item as "link, Home" etc. Reading order matches the
+  visual order.
+
+Interactive elements:
+- contact.html: each input is announced with its label
+  ("Full name (required), edit text"), fieldset legends are read as group
+  names ("Your details, group"). Radio buttons announce their label and
+  group. This page reads cleanly. The only gap: the "required" state is part
+  of the visible label text but NOT a real required attribute, so Narrator
+  does not say "required" as a state.
+- chatbot.html: the message input is announced only as "edit text" with no
+  name (placeholder is sometimes read, sometimes not) - the user does not
+  know what to type. The submit button is announced as "Trimite, button"
+  (foreign word read by an English voice).
+
+Obstacles found while navigating:
+- CHATBOT: after sending a message, the bot reply is added to the chat
+  container but Narrator stays silent - there is no live region, so a blind
+  user has no idea a response appeared. They must manually move the reading
+  cursor back into the container to discover new text. This is the biggest
+  usability obstacle on the site.
+- UNIVERSITIES: the "#status" paragraph ("Loading...", "Error...") is updated
+  silently for the same reason. The table is navigable but, without
+  scope="col", column-header association when moving cell by cell is weaker.
+
+4. SUMMARY
+
+The site has a solid accessibility baseline (lang, skip link, headings,
+labels, alt text, ARIA nav landmark). The main automated Lighthouse issues
+are: the unlabeled chatbot input, missing scope on the universities table
+headers, and borderline accent/footer contrast. The main manual / Narrator
+issues are: dynamically updated regions (chat replies and status text) that
+are never announced because they are not live regions, missing required-state
+on the contact form, the foreign-language submit button, and the missing
+Chatbot link in the contact page navigation. Fixing the labels, adding
+aria-live regions and required attributes, and aligning the navigation would
+raise both the Lighthouse score and the real screen reader experience.
