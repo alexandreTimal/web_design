@@ -57,14 +57,14 @@ form button[type="reset"]:focus {
   display: block;
 }
 
-.hero-section {
+main section.hero-section {
   background: linear-gradient(135deg, purple 0%, darkmagenta 100%);
   color: white;
   border-radius: 6px;
   padding: 30px 20px;
 }
 
-.hero-section h2 {
+main section.hero-section h2 {
   color: white;
   margin-top: 0;
 }
