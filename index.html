@@ -5,11 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home - Alexandre Timal Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portfolio.css">
   <style>
     .highlight {
       background: lavenderblush;
       padding: 4px 8px;
       border-radius: 3px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .skill-name {
+      width: 110px;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .skill-track {
+      flex: 1;
+      background: lavender;
+      border-radius: 4px;
+      height: 14px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: purple;
+      border-radius: 4px;
+      width: 0;
+      transition: width 1s ease;
+    }
+
+    .skill-pct {
+      width: 36px;
+      font-size: 0.85rem;
+      color: dimgray;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .stat-cards {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .stat-card {
+      background: purple;
+      color: white;
+      border-radius: 6px;
+      padding: 14px 20px;
+      text-align: center;
+      flex: 1;
+      min-width: 80px;
+    }
+
+    .stat-card .num {
+      font-size: 1.8rem;
+      font-weight: bold;
+      display: block;
+    }
+
+    .stat-card .lbl {
+      font-size: 0.8rem;
+      opacity: 0.85;
     }
   </style>
 </head>
@@ -21,18 +92,8 @@
     <p>Personal Brand Portfolio + CV</p>
   </header>
 
-  <nav aria-label="Main navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="data.html">Projects Data</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="universities.html">Universities</a></li>
-      <li><a href="card.html">Card</a></li>
-      <li><a href="overview.html">Overview</a></li>
-      <li><a href="chatbot.html">Chatbot</a></li>
-    </ul>
-  </nav>
+  <nav id="main-nav"></nav>
+  <script src="nav.js"></script>
 
   <main id="main-content">
     <section>
@@ -54,7 +115,69 @@
       <h2>Latest Updates</h2>
       <p style="font-style: italic; color: darkmagenta;">Currently working on new features for <span class="highlight">Trackmate</span> and studying Web Design at UVT during my exchange semester.</p>
     </section>
+
+    <section>
+      <h2>Quick Stats</h2>
+      <div class="stat-cards">
+        <div class="stat-card">
+          <span class="num">4</span>
+          <span class="lbl">Years at Epitech</span>
+        </div>
+        <div class="stat-card">
+          <span class="num">10+</span>
+          <span class="lbl">Projects Built</span>
+        </div>
+        <div class="stat-card">
+          <span class="num">3</span>
+          <span class="lbl">Freelance Clients</span>
+        </div>
+        <div class="stat-card">
+          <span class="num">2</span>
+          <span class="lbl">Countries</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-grid" id="skills-grid">
+        <div class="skill-row">
+          <span class="skill-name">JavaScript</span>
+          <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">React</span>
+          <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">C / C++</span>
+          <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Python</span>
+          <div class="skill-track"><div class="skill-fill" data-pct="70"></div></div>
+          <span class="skill-pct">70%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">HTML / CSS</span>
+          <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
+          <span class="skill-pct">90%</span>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <script>
+    window.addEventListener('load', function () {
+      var fills = document.querySelectorAll('.skill-fill');
+      fills.forEach(function (el) {
+        el.style.width = el.getAttribute('data-pct') + '%';
+      });
+    });
+  </script>
 
   <footer>
     <p>Alexandre Timal &middot; Web Design &middot; 2026</p>

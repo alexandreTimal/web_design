@@ -1,0 +1,85 @@
+form input[type="url"],
+form input[type="date"],
+form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+form input[aria-invalid="true"],
+form textarea[aria-invalid="true"],
+form select[aria-invalid="true"] {
+  border-color: crimson;
+  outline-color: crimson;
+}
+
+.error-msg {
+  color: crimson;
+  font-size: 0.875rem;
+  display: block;
+  min-height: 1.1em;
+  margin-bottom: 4px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+form button[type="reset"] {
+  background: dimgray;
+}
+
+form button[type="reset"]:hover,
+form button[type="reset"]:focus {
+  background: gray;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.empty-msg {
+  text-align: center;
+  color: dimgray;
+  font-style: italic;
+  padding: 20px;
+}
+
+.thumb {
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, purple 0%, darkmagenta 100%);
+  color: white;
+  border-radius: 6px;
+  padding: 30px 20px;
+}
+
+.hero-section h2 {
+  color: white;
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .form-buttons button {
+    width: 100%;
+  }
+}

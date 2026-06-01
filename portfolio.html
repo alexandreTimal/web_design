@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - Alexandre Timal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Alexandre Timal</h1>
+    <p>Personal Brand Portfolio + CV</p>
+  </header>
+
+  <nav id="main-nav"></nav>
+  <script src="nav.js"></script>
+
+  <main id="main-content">
+    <section class="hero-section">
+      <h2>My Projects Portfolio</h2>
+      <p>Add your projects below and they will appear in the table. All fields marked with <abbr title="required">*</abbr> are required.</p>
+    </section>
+
+    <section>
+      <h2>Add a Project</h2>
+      <form id="project-form" novalidate>
+        <fieldset>
+          <legend>Project Information</legend>
+
+          <label for="proj-name">Project Name *</label>
+          <input type="text" id="proj-name" name="proj-name"
+                 aria-describedby="proj-name-error" autocomplete="off">
+          <span class="error-msg" id="proj-name-error" role="alert"></span>
+
+          <label for="proj-desc">Description *</label>
+          <textarea id="proj-desc" name="proj-desc" rows="3"
+                    aria-describedby="proj-desc-error"></textarea>
+          <span class="error-msg" id="proj-desc-error" role="alert"></span>
+
+          <label for="proj-url">Project URL</label>
+          <input type="url" id="proj-url" name="proj-url" placeholder="https://"
+                 aria-describedby="proj-url-error">
+          <span class="error-msg" id="proj-url-error" role="alert"></span>
+
+          <label for="proj-image">Image URL (thumbnail)</label>
+          <input type="url" id="proj-image" name="proj-image" placeholder="https://"
+                 aria-describedby="proj-image-error">
+          <span class="error-msg" id="proj-image-error" role="alert"></span>
+
+          <label for="proj-date">Completion Date *</label>
+          <input type="date" id="proj-date" name="proj-date"
+                 aria-describedby="proj-date-error">
+          <span class="error-msg" id="proj-date-error" role="alert"></span>
+        </fieldset>
+
+        <fieldset>
+          <legend>Technical Details</legend>
+
+          <label for="proj-tech">Main Technology *</label>
+          <select id="proj-tech" name="proj-tech" aria-describedby="proj-tech-error">
+            <option value="">-- Select a technology --</option>
+            <option value="HTML/CSS">HTML / CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="React">React</option>
+            <option value="Node.js">Node.js</option>
+            <option value="Python">Python</option>
+            <option value="C/C++">C / C++</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="error-msg" id="proj-tech-error" role="alert"></span>
+
+          <label for="proj-status">Status</label>
+          <select id="proj-status" name="proj-status">
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+            <option value="On Hold">On Hold</option>
+          </select>
+        </fieldset>
+
+        <div class="form-buttons">
+          <button type="submit">Add Project</button>
+          <button type="reset">Reset Form</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <h2>Projects Table</h2>
+      <div class="table-wrapper">
+        <table class="data-table" id="projects-table">
+          <caption>List of submitted projects</caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">URL</th>
+              <th scope="col">Technologies</th>
+              <th scope="col">Thumbnail</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody id="projects-tbody">
+            <tr id="empty-row">
+              <td colspan="6" class="empty-msg">No projects yet. Fill in the form above!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Alexandre Timal &middot; Web Design &middot; 2026</p>
+  </footer>
+
+  <script src="portfolio.js"></script>
+</body>
+</html>
